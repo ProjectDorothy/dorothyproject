@@ -9,7 +9,7 @@
 //   messagingSenderId: "169795236310",
 //   appId: "1:169795236310:web:3a18388d3336351bd7b477"
 // };
-// firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 defaultDatabase = firebase.database();
 
