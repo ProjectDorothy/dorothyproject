@@ -60,9 +60,9 @@ function getHealthPlayerB() {
     return health.health;
 }
 
-function turn_number(){
+function turn_number() {
     let turn;
-    defaultDatabase.ref("moveNo").once("value", function (data){
+    defaultDatabase.ref("moveNo").once("value", function (data) {
         turn = data.val()
     });
     return turn.moveNumber;
@@ -78,6 +78,7 @@ playerMoves.on("value", function (data) {
     console.log("Error: " + error.code);
 })
 
+/*
 //Get health value of player A
 var playerA = defaultDatabase.ref("players/A");
 playerA.on("value", function (data) {
@@ -95,6 +96,7 @@ playerB.on("value", function (data) {
 }, function (error) {
     console.log("Error: " + error.code);
 });
+*/
 
 function updateHealthPlayerA(healthValue) {
     console.log("Updating value");
@@ -116,19 +118,19 @@ function updateHealthPlayerB(healthValue) {
     )
 }
 
-function dmg_to_A(dmg_done){
-    let h  = getHealthPlayerA()
+function dmg_to_A(dmg_done) {
+    let h = getHealthPlayerA()
     updateHealthPlayerA(h - dmg_done)
 }
 
-function dmg_to_B(dmg_done){
+function dmg_to_B(dmg_done) {
     let h = getHealthPlayerB()
     updateHealthPlayerB(h - dmg_done)
 }
 
-function update_turn(){
+function update_turn() {
     let turn = turn_number() + 1;
-    defaultDatabase.ref("moveNo").update({"moveNumber" : turn});
+    defaultDatabase.ref("moveNo").update({ "moveNumber": turn });
     console.log('turn has updated, it is now turn:' + turn)
 }
 
@@ -150,7 +152,7 @@ function whos_turn() {
 }
 
 //determine wheter to update AFTER this turn is finished or not
-function updt(){
+function updt() {
     let turn = turn_number();
     let bool_updt
     if (turn % 2 === 1) {
