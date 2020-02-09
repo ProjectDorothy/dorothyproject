@@ -121,21 +121,19 @@ playerB.on("value", function (data) {
 function updateHealthPlayerA(healthValue) {
     console.log("Updating value A");
 
-    playerA.update(
-        {
-            "health": healthValue
-        }
-    )
+    // playerA.update({"health": healthValue})
+    defaultDatabase.ref("players/B").update({"health": healthValue});
 }
 
 function updateHealthPlayerB(healthValue) {
     console.log("Updating value B");
 
-    playerB.update(
-        {
-            "health": healthValue
-        }
-    )
+    // playerB.update(
+    //     {
+    //         "health": healthValue
+    //     }
+    // )
+    defaultDatabase.ref("players/B").update({"health": healthValue});
 }
 
 function dmg_to_A(dmg_done) {
