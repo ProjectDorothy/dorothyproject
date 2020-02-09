@@ -161,6 +161,18 @@ function dmg_to_B(dmg_done) {
     // updateHealthPlayerB(h - dmg_done);
 }
 
+function healA(amount) {
+    getHealthPlayer("A").then(h => {
+        updateHealthPlayerB(h + amount);
+    })
+}
+
+function healB(amount) {
+    getHealthPlayer("B").then(h => {
+        updateHealthPlayerB(h + amount);
+    })
+}
+
 function update_turn() {
     let turn = turn_number() + 1;
     defaultDatabase.ref("moveNo").update({ "moveNumber": turn });
@@ -177,11 +189,14 @@ function reset_game() {
 function whos_turn() {
     let turn = turn_number();
     if (turn % 4 === 3 || turn % 4 === 0) {
-        console.log('Player A plays')
+        // console.log('Player A plays')
+        return 0
     }
     else {
-        console.log('Player B plays')
+        // console.log('Player B plays')
+        return 1
     }
+
 }
 
 //determine wheter to update AFTER this turn is finished or not
