@@ -36,6 +36,7 @@ CODE THAT GETS POSE OF PLAYER B
 */
 
 // Get health of player A
+/*
 function getHealthPlayerA() {
     var health;
 
@@ -48,6 +49,20 @@ function getHealthPlayerA() {
     });
     // return health.health;
 }
+*/
+function getHealthPlayerA() {
+    return defaultDatabase.ref("players/A").once("value")
+        .then(data => {
+            return data.val();
+        })
+        .catch(error => {
+            console.log("Error: " + error.error);
+        });
+}
+
+getHealthPlayerA().then(result => {
+    console.log("result: ", result)
+})
 
 function getHealthPlayerB() {
     var health;
@@ -79,6 +94,9 @@ playerMoves.on("value", function (data) {
 }, function (error) {
     console.log("Error: " + error.code);
 })
+
+var playerA = defaultDatabase.ref("players/A");
+var playerB = defaultDatabase.ref("players/B");
 
 /*
 //Get health value of player A
