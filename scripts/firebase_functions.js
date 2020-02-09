@@ -141,3 +141,15 @@ function reset_game() {
     defaultDatabase.ref('/players/B').update({ 'health': 100 });
 }
 
+//determine who plays
+
+function whos_turn() {
+    let turn = turn_number();
+    if (turn % 4 === 3 || turn % 4 === 0) {
+        console.log('Player A plays')
+    }
+    else {
+        console.log('Player B plays')
+    }
+}
+
