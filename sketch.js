@@ -115,7 +115,7 @@ function classifyPose() {
 }
 
 function gotResult(error, results) {
-  console.log(results[0].label + ' ' + results[0].confidence);
+  //console.log(results[0].label + ' ' + results[0].confidence);
   if (results[0].confidence > 0.75) {
     const poseL = results[0].label;
     detectMotion(poseL);
