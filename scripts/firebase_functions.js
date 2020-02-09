@@ -129,6 +129,14 @@ function updateHealthPlayerB(healthValue) {
     )
 }
 
+function dmg_to_A(dmg_done){
+    updateHealthPlayerA(getHealthPlayerA()-dmg_done)
+}
+
+function dmg_to_B(dmg_done){
+    updateHealthPlayerA(getHealthPlayerB()-dmg_done)
+}
+
 function update_turn(){
     let turn = turn_number() + 1;
     defaultDatabase.ref("moveNo").update({"moveNumber" : turn});
