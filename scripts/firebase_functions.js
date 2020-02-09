@@ -77,7 +77,6 @@ function turn_number(){
     let turn;
     defaultDatabase.ref("moveNo").once("value", function (data){
         turn = data.val()
-        console.log("Turn Number: " + turn.moveNumber);
     });
     return turn.moveNumber;
 
