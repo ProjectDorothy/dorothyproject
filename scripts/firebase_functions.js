@@ -42,10 +42,11 @@ function getHealthPlayerA() {
     defaultDatabase.ref("players/A").once("value", function (data) {
         health = data.val();
         console.log("Health of A:" + health.health);
+        return health.health;
     }, function (error) {
         console.log("Error: " + error.error);
     });
-    return health.health;
+    // return health.health;
 }
 
 function getHealthPlayerB() {
@@ -54,10 +55,11 @@ function getHealthPlayerB() {
     defaultDatabase.ref("players/B").once("value", function (data) {
         health = data.val();
         console.log("Health of B:" + health.health);
+        return health.health;
     }, function (error) {
         console.log("Error: " + error.error);
     });
-    return health.health;
+    // return health.health;
 }
 
 function turn_number() {
