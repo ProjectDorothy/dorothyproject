@@ -10,8 +10,9 @@ let poseLabel;
 let flagEnd = false;
 
 function setup() {
-  createCanvas(640, 480);
+  createCanvas(windowWidth, windowHeight);
   video = createCapture(VIDEO);
+  video.size(windowWidth,windowHeight);
   video.hide();
   poseNet = ml5.poseNet(video, modelLoaded);
   //.on if you find a pose call gotPoses
@@ -119,7 +120,7 @@ function draw() {
   //next 2 lines mirror image, only for testing on front-facing camera
   translate(video.width, 0);
   scale(-1,1);
-  image(video, 0, 0);
+  image(video, 0, 0,windowWidth,windowHeight);
   
   if (pose) {
     // let eyeR = pose.rightEye;
