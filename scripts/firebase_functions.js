@@ -50,8 +50,9 @@ function getHealthPlayerA() {
     // return health.health;
 }
 */
-function getHealthPlayerA() {
-    return defaultDatabase.ref("players/A").once("value")
+
+function getHealthPlayer(playerId) {
+    return defaultDatabase.ref("players/" + playerId).once("value")
         .then(data => {
             return data.val().health;
         })
@@ -60,18 +61,28 @@ function getHealthPlayerA() {
         });
 }
 
-function getHealthPlayerB() {
-    var health;
+// function getHealthPlayerA() {
+//     return defaultDatabase.ref("players/A").once("value")
+//         .then(data => {
+//             return data.val().health;
+//         })
+//         .catch(error => {
+//             console.log("Error: " + error.error);
+//         });
+// }
 
-    defaultDatabase.ref("players/B").once("value", function (data) {
-        health = data.val();
-        console.log("Health of B:" + health.health);
-        return health.health;
-    }, function (error) {
-        console.log("Error: " + error.error);
-    });
-    // return health.health;
-}
+// function getHealthPlayerB() {
+//     var health;
+
+//     defaultDatabase.ref("players/B").once("value", function (data) {
+//         health = data.val();
+//         console.log("Health of B:" + health.health);
+//         return health.health;
+//     }, function (error) {
+//         console.log("Error: " + error.error);
+//     });
+//     // return health.health;
+// }
 
 function turn_number() {
     let turn;
@@ -118,7 +129,7 @@ function updateHealthPlayerA(healthValue) {
     console.log("Updating value A");
 
     // playerA.update({"health": healthValue})
-    defaultDatabase.ref("players/B").update({"health": healthValue});
+    defaultDatabase.ref("players/B").update({ "health": healthValue });
 }
 
 function updateHealthPlayerB(healthValue) {
@@ -129,11 +140,11 @@ function updateHealthPlayerB(healthValue) {
     //         "health": healthValue
     //     }
     // )
-    defaultDatabase.ref("players/B").update({"health": healthValue});
+    defaultDatabase.ref("players/B").update({ "health": healthValue });
 }
 
 function dmg_to_A(dmg_done) {
-    getHealthPlayerA().then(h => {
+    getHealthPlayer("A").then(h => {
         updateHealthPlayerA(h - dmg_done);
     })
 
@@ -142,8 +153,12 @@ function dmg_to_A(dmg_done) {
 }
 
 function dmg_to_B(dmg_done) {
-    let h = getHealthPlayerB();
-    updateHealthPlayerB(h - dmg_done);
+    getHealthPlayer("B").then(h => {
+        updateHealthPlayerA(h - dmg_done);
+    })
+
+    // let h = getHealthPlayerB();
+    // updateHealthPlayerB(h - dmg_done);
 }
 
 function update_turn() {
