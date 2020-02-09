@@ -172,10 +172,25 @@ function reset_game() {
     defaultDatabase.ref('/players/B').update({ 'health': 100 });
 }
 
+
+function getLastKnown() {
+    let lastMove;
+
+    defaultDatabase.ref('/lastMove').once("value", function (data) {
+        lastMove = data.val();
+
+    });
+    return lastMove.A;
+    // defaultDatabase.ref("moveNo").once("value", function (data) {
+    //     turn = data.val()
+    // });
+    // return turn.moveNumber;
+}
+
 //determine who plays
 function whos_turn() {
     let turn = turn_number();
-    if (turn % 4 === 3 || turn % 4 === 0) {
+    if (turn % 2 === 0) {
         // console.log('Player A plays')
         return 0
     }

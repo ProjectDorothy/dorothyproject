@@ -34,12 +34,12 @@
     <!-- create buttons to simulate the outputs from the posenet -->
     <div>
 
-        <script>
+        <!-- <script>
             function test() {
                 var health = getHealthPlayerA();
                 console.log("HEALTH: " + health);
             }
-        </script>
+        </script> -->
 
         <!--        <button onclick="updateHealthPlayerA(15); update_turn(); whos_turn(); updt()">Update Health of Player A </button>-->
         <!--        <button onclick="reset_game(); whos_turn();updt()">Reset </button>-->
@@ -49,6 +49,26 @@
 
         <!--        the moves that B does on A-->
         <!--        figure out a way to incorporate the updt and whos_turn -->
+        <script>
+            var inferece = getLastKnown();
+            switch (key) {
+                case "normal":
+                    dmg_to_A(10);
+                    update_turn();
+                    break;
+                case "power":
+                    dmg_to_A(30);
+                    update_turn();
+                    break;
+
+                case "potion":
+                    healB(15);
+                    update_turn();
+                default:
+                    console.log("No move");
+            }
+        </script>
+
         <button onclick="dmg_to_A(30); update_turn();">Player B uses Power on Player A</button>
         <button onclick="dmg_to_A(10); update_turn();">Player B uses Normal on Player A</button>
         <button onclick="healB(15); update_turn();">Player B uses Potion on Himself</button>
