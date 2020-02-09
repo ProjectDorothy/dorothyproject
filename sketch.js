@@ -1,14 +1,14 @@
 // ===========================================FIREBASE START=====================================================
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDQ3gaHvcFpEkusY-VAS2sgUru_terdUVA",
-  authDomain: "hitmeservermate.firebaseapp.com",
-  databaseURL: "https://hitmeservermate.firebaseio.com",
-  projectId: "hitmeservermate",
-  storageBucket: "hitmeservermate.appspot.com",
-  messagingSenderId: "169795236310",
-  appId: "1:169795236310:web:3a18388d3336351bd7b477"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDQ3gaHvcFpEkusY-VAS2sgUru_terdUVA",
+//   authDomain: "hitmeservermate.firebaseapp.com",
+//   databaseURL: "https://hitmeservermate.firebaseio.com",
+//   projectId: "hitmeservermate",
+//   storageBucket: "hitmeservermate.appspot.com",
+//   messagingSenderId: "169795236310",
+//   appId: "1:169795236310:web:3a18388d3336351bd7b477"
+// };
 firebase.initializeApp(firebaseConfig);
 
 defaultDatabase = firebase.database();
