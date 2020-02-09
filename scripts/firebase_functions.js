@@ -48,19 +48,6 @@ function getHealthPlayerA() {
     return health.health;
 }
 
-// Get health of player A
-function getHealthPlayerA() {
-    var health;
-
-    defaultDatabase.ref("players/A").once("value", function (data) {
-        health = data.val();
-        console.log("Health of A:" + health.health);
-    }, function (error) {
-        console.log("Error: " + error.error);
-    });
-    return health.health;
-}
-
 function getHealthPlayerB() {
     var health;
 
