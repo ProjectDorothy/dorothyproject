@@ -142,7 +142,6 @@ function reset_game() {
 }
 
 //determine who plays
-
 function whos_turn() {
     let turn = turn_number();
     if (turn % 4 === 3 || turn % 4 === 0) {
@@ -153,3 +152,16 @@ function whos_turn() {
     }
 }
 
+//determine wheter to update AFTER this turn is finished or not
+function updt(){
+    let turn = turn_number();
+    let bool_updt
+    if (turn % 2 === 1) {
+        bool_updt = 1;
+    }
+    else {
+        bool_updt = 0;
+    }
+    // return bool_updt;
+    console.log(bool_updt);
+}
