@@ -1,9 +1,7 @@
-let video;
+      let video;
 let poseNet;
 let pose;
 let skeleton;
-
-let position = new Array(2);
 
 let brain;
 let poseLabel;
@@ -13,7 +11,6 @@ function setup() {
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.hide();
-  frameRate(24);
   poseNet = ml5.poseNet(video, modelLoaded);
   //.on if you find a pose call gotPoses
   poseNet.on('pose', gotPoses);
@@ -54,7 +51,8 @@ function classifyPose() {
 }
 
 function gotResult(error, results) {
-  if (results[0].confidence > 0.85) {
+  console.log(results[0].label + ' ' + results[0].confidence);
+  if (results[0].confidence > 0.95) {
     const poseL = results[0].label;
     detectMotion(poseL);
   }
@@ -66,15 +64,20 @@ let now = "";
 function detectMotion(label) {
   if(!flagEnd){
     now = label;
-    if (then != now) {
+    if (now == 'normalEnd') {
+      poseLabel = 'Normal!';
+      }
+    else if (now == 'potionEnd') {
+      poseLabel = 'Potion!';
+      }
+    else if (then != now) {
       console.log("now: " + now + " then: " + then);
-      const move = then.replace("Start","");
-      if(then.includes("Start") &&
-         now.includes(move)) {
-          poseLabel = move
+      if(then=='powerStart' &&
+         now=='powerEnd') {
+          poseLabel = 'POWER!';
           //flagEnd = true;
       } else {
-        then = now
+        then = now;
       }
     }
   }
@@ -93,26 +96,6 @@ function gotPoses(poses) {
 
 function modelLoaded() {
   console.log('poseNet ready!');
-}
-
-
-function sequence(label) { 
-  position[0] = label;
-  console.log("what"+ position[0]);
-  if(position[0] != poseLabel){
-    position[1] = poseLabel;
-  }
-}
-
-function action() {
-  let move;
-  sequence(poseLabel);
-  if(position[0].includes('Start')){
-    move = position[0].replace('Start','');
-  }
-  if(position[1].includes(move)){
-    return move;  
-  }
 }
 
 function draw() {
