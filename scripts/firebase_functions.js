@@ -144,8 +144,6 @@ function updateHealthPlayerB(healthValue) {
 }
 
 function dmg_to_A(dmg_done) {
-    let h = getHealthPlayerA();
-
     getHealthPlayer("A").then(h => {
         updateHealthPlayerA(h - dmg_done);
     })
@@ -155,8 +153,6 @@ function dmg_to_A(dmg_done) {
 }
 
 function dmg_to_B(dmg_done) {
-    let h = getHealthPlayerB();
-
     getHealthPlayer("B").then(h => {
         updateHealthPlayerB(h - dmg_done);
     })
@@ -166,16 +162,12 @@ function dmg_to_B(dmg_done) {
 }
 
 function healA(amount) {
-    let h = getHealthPlayerA();
-
     getHealthPlayer("A").then(h => {
         updateHealthPlayerA(h + amount);
     })
 }
 
 function healB(amount) {
-    let h = getHealthPlayerB();
-
     getHealthPlayer("B").then(h => {
         updateHealthPlayerB(h + amount);
     })
