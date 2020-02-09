@@ -25,8 +25,8 @@ let rightGuardSprite;
 let helmetSprite;
 let steelArmor;
 let helmet;
-let leftLegSprite;
-let rightLegSprite;
+// let leftLegSprite;
+// let rightLegSprite;
 let armorBox;
 let skeleBox;
 let animatedSprite;
@@ -91,8 +91,8 @@ function setup() {
   chestGuardSprite = makeSprite('SteelArmour.png');
   leftGuardSprite = makeSprite('leftGuard.png');
   rightGuardSprite = makeSprite('rightGuard.png');
-  leftLegSprite = makeSprite('leg.png');
-  rightLegSprite = makeSprite('leg.png');
+//   leftLegSprite = makeSprite('leg.png');
+//   rightLegSprite = makeSprite('leg.png');
   chestGuardSprite.scale = 1.0;
   helmetSprite.scale = 0.4;
 
@@ -253,8 +253,8 @@ function draw() {
 
       armordraw(pose.leftElbow, pose.leftWrist, leftGuardSprite);
       armordraw(pose.rightElbow, pose.rightWrist, rightGuardSprite);
-      armordraw(pose.leftKnee, pose.leftAnkle, leftLegSprite);
-      armordraw(pose.rightKnee, pose.rightAnkle, rightLegSprite);
+//       armordraw(pose.leftKnee, pose.leftAnkle, leftLegSprite);
+//       armordraw(pose.rightKnee, pose.rightAnkle, rightLegSprite);
 
       let chestposx = (((pose.leftShoulder.x + pose.rightShoulder.x) / 2) + ((pose.leftHip.x + pose.rightHip.x) / 2)) / 2;
       let chestposy = (((pose.leftShoulder.y + pose.leftHip.y) / 2) + ((pose.rightShoulder.y + pose.rightHip.y) / 2)) / 2;
