@@ -130,11 +130,13 @@ function updateHealthPlayerB(healthValue) {
 }
 
 function dmg_to_A(dmg_done){
-    updateHealthPlayerA(getHealthPlayerA()-dmg_done)
+    let h  = getHealthPlayerA()
+    updateHealthPlayerA(h - dmg_done)
 }
 
 function dmg_to_B(dmg_done){
-    updateHealthPlayerA(getHealthPlayerB()-dmg_done)
+    let h = getHealthPlayerB()
+    updateHealthPlayerA(h - dmg_done)
 }
 
 function update_turn(){
