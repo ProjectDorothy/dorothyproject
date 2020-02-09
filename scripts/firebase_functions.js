@@ -154,7 +154,7 @@ function dmg_to_A(dmg_done) {
 
 function dmg_to_B(dmg_done) {
     getHealthPlayer("B").then(h => {
-        updateHealthPlayerA(h - dmg_done);
+        updateHealthPlayerB(h - dmg_done);
     })
 
     // let h = getHealthPlayerB();
