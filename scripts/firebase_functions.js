@@ -60,10 +60,6 @@ function getHealthPlayerA() {
         });
 }
 
-getHealthPlayerA().then(result => {
-    console.log("result: ", result)
-})
-
 function getHealthPlayerB() {
     var health;
 
@@ -139,8 +135,12 @@ function updateHealthPlayerB(healthValue) {
 }
 
 function dmg_to_A(dmg_done) {
-    let h = getHealthPlayerA();
-    updateHealthPlayerA(h - dmg_done);
+    getHealthPlayerA().then(h => {
+        updateHealthPlayerA(h - dmg_done);
+    })
+
+    // let h = getHealthPlayerA();
+    // updateHealthPlayerA(h - dmg_done);
 }
 
 function dmg_to_B(dmg_done) {
