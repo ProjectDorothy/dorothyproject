@@ -41,21 +41,21 @@ function myFunction(x) {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  // if (isMobileDevice){
-  // var constraints = {
-  //   audio: false,
-  //   video: {
-  //     facingMode: {
-  //       exact: "environment"
-  //     }
-  //   }
-  // };
-  // video = createCapture(constraints);
-  // }
-  // else {
+  if (isMobileDevice){
+  var constraints = {
+    audio: false,
+    video: {
+      facingMode: {
+        exact: "environment"
+      }
+    }
+  };
+  video = createCapture(constraints);
+  }
+  else {
     video = createCapture(VIDEO);
-    video.size(windowWidth,windowHeight);
-  //}
+  }  
+  video.size(windowWidth,windowHeight);
   video.hide();
   poseNet = ml5.poseNet(video, modelLoaded);
   poseNet.on('pose', gotPoses);
