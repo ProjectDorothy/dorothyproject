@@ -13,6 +13,7 @@ function setup() {
   createCanvas(640, 480);
   video = createCapture(VIDEO);
   video.hide();
+  frameRate(24);
   poseNet = ml5.poseNet(video, modelLoaded);
   //.on if you find a pose call gotPoses
   poseNet.on('pose', gotPoses);
