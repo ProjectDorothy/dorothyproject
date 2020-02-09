@@ -53,7 +53,7 @@ function getHealthPlayerA() {
 function getHealthPlayerA() {
     return defaultDatabase.ref("players/A").once("value")
         .then(data => {
-            return data.val();
+            return data.val().health;
         })
         .catch(error => {
             console.log("Error: " + error.error);
