@@ -235,10 +235,10 @@ function draw() {
       armordraw(pose.rightElbow, pose.rightWrist, rightGuardSprite);
       let chestposx = (((pose.leftShoulder.x + pose.rightShoulder.x)/2)+((pose.leftHip.x + pose.rightHip.x)/2))/2;
       let chestposy = (((pose.leftShoulder.y + pose.leftHip.y)/2)+((pose.rightShoulder.y + pose.rightHip.y)/2))/2;
-      chestGuardSprite.velocity.x = (chestposx-chestGuardSprite.position.x)/10;
-      chestGuardSprite.velocity.y = ((chestposy+((eyeR.y+eyeL.y)/2-pose.nose.y))-chestGuardSprite.position.y)/10;
-      helmetSprite.velocity.x = ((eyeR.x+eyeL.x)/2-helmetSprite.position.x)/10;
-      helmetSprite.velocity.y = (((eyeR.y+eyeL.y)/2+((eyeR.y+eyeL.y)/2-pose.nose.y)*2)-helmetSprite.position.y)/10;
+      chestGuardSprite.velocity.x = (chestposx-chestGuardSprite.position.x)/2;
+      chestGuardSprite.velocity.y = ((chestposy+((eyeR.y+eyeL.y)/2-pose.nose.y))-chestGuardSprite.position.y)/2;
+      helmetSprite.velocity.x = ((eyeR.x+eyeL.x)/2-helmetSprite.position.x)/2;
+      helmetSprite.velocity.y = (((eyeR.y+eyeL.y)/2+((eyeR.y+eyeL.y)/2-pose.nose.y)*2)-helmetSprite.position.y)/2;
       //armordraw(pose.rightShoulder, pose.rightElbow, imageSprite);
       drawSprites();
     }
