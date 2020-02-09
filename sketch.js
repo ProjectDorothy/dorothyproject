@@ -62,15 +62,15 @@ function setup() {
   function makeSprite(imageIn){
     sprite = createSprite(300, 150);
     sprite.addImage(loadImage(imageIn));
-    sprite.scale = 0.2;
+    sprite.scale = 0.1;
     return sprite;
   }
   helmetSprite = makeSprite('helmet.png');
   chestGuardSprite = makeSprite('SteelArmour.png');
   leftGuardSprite = makeSprite('leftGuard.png');
   rightGuardSprite = makeSprite('rightGuard.png');
-  chestGuardSprite.scale = 1.5;
-  helmetSprite.scale = 0.7;
+  chestGuardSprite.scale = 1.0;
+  helmetSprite.scale = 0.4;
 
   animatedSprite = createSprite(500, 150, 50, 100);
   animatedSprite.addAnimation('sun', 'sun1', 'sun3');
