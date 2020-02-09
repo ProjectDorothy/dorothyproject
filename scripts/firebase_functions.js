@@ -73,6 +73,16 @@ function getHealthPlayerB() {
     return health.health;
 }
 
+function turn_number(){
+    let turn;
+    defaultDatabase.ref("moveNo").once("value", function (data){
+        turn = data.val()
+        console.log("Turn Number: " + turn.moveNumber);
+    });
+    return turn.moveNumber;
+
+}
+
 //Subscription to notify when number of moves changes
 var playerMoves = defaultDatabase.ref("moveNo/");
 playerMoves.on("value", function (data) {
@@ -118,6 +128,12 @@ function updateHealthPlayerB(healthValue) {
             "health": healthValue
         }
     )
+}
+
+function update_turn(){
+    let turn = turn_number() + 1;
+    defaultDatabase.ref("moveNo").update({"moveNumber" : turn});
+    console.log('turn has updated, it is now turn:' + turn)
 }
 
 function reset_game() {
