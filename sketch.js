@@ -1,17 +1,17 @@
 // ===========================================FIREBASE START=====================================================
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDQ3gaHvcFpEkusY-VAS2sgUru_terdUVA",
-  authDomain: "hitmeservermate.firebaseapp.com",
-  databaseURL: "https://hitmeservermate.firebaseio.com",
-  projectId: "hitmeservermate",
-  storageBucket: "hitmeservermate.appspot.com",
-  messagingSenderId: "169795236310",
-  appId: "1:169795236310:web:3a18388d3336351bd7b477"
-};
-firebase.initializeApp(firebaseConfig);
+// const firebaseConfig = {
+//   apiKey: "AIzaSyDQ3gaHvcFpEkusY-VAS2sgUru_terdUVA",
+//   authDomain: "hitmeservermate.firebaseapp.com",
+//   databaseURL: "https://hitmeservermate.firebaseio.com",
+//   projectId: "hitmeservermate",
+//   storageBucket: "hitmeservermate.appspot.com",
+//   messagingSenderId: "169795236310",
+//   appId: "1:169795236310:web:3a18388d3336351bd7b477"
+// };
+// firebase.initializeApp(firebaseConfig);
 
-defaultDatabase = firebase.database();
+// defaultDatabase = firebase.database();
 
 // ===========================================FIREBASE END=====================================================
 let video;
@@ -91,8 +91,8 @@ function setup() {
   chestGuardSprite = makeSprite('SteelArmour.png');
   leftGuardSprite = makeSprite('leftGuard.png');
   rightGuardSprite = makeSprite('rightGuard.png');
-//   leftLegSprite = makeSprite('leg.png');
-//   rightLegSprite = makeSprite('leg.png');
+  //   leftLegSprite = makeSprite('leg.png');
+  //   rightLegSprite = makeSprite('leg.png');
   chestGuardSprite.scale = 1.0;
   helmetSprite.scale = 0.4;
 
@@ -253,8 +253,8 @@ function draw() {
 
       armordraw(pose.leftElbow, pose.leftWrist, leftGuardSprite);
       armordraw(pose.rightElbow, pose.rightWrist, rightGuardSprite);
-//       armordraw(pose.leftKnee, pose.leftAnkle, leftLegSprite);
-//       armordraw(pose.rightKnee, pose.rightAnkle, rightLegSprite);
+      //       armordraw(pose.leftKnee, pose.leftAnkle, leftLegSprite);
+      //       armordraw(pose.rightKnee, pose.rightAnkle, rightLegSprite);
 
       let chestposx = (((pose.leftShoulder.x + pose.rightShoulder.x) / 2) + ((pose.leftHip.x + pose.rightHip.x) / 2)) / 2;
       let chestposy = (((pose.leftShoulder.y + pose.leftHip.y) / 2) + ((pose.rightShoulder.y + pose.rightHip.y) / 2)) / 2;
