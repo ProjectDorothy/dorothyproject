@@ -11,7 +11,7 @@
 // };
 // firebase.initializeApp(firebaseConfig);
 
-// defaultDatabase = firebase.database();
+defaultDatabase = firebase.database();
 
 // ===========================================FIREBASE END=====================================================
 let video;
