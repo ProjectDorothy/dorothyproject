@@ -144,8 +144,8 @@ function updateHealthPlayerB(healthValue) {
 }
 
 function dmg_to_A(dmg_done) {
-    getHealthPlayer("A").then(h => {
-        updateHealthPlayerA(h - dmg_done);
+    getHealthPlayer("A").then(h1 => {
+        updateHealthPlayerA(h1 - dmg_done);
     })
 
     // let h = getHealthPlayerA();
@@ -153,8 +153,8 @@ function dmg_to_A(dmg_done) {
 }
 
 function dmg_to_B(dmg_done) {
-    getHealthPlayer("B").then(h => {
-        updateHealthPlayerB(h - dmg_done);
+    getHealthPlayer("B").then(h2 => {
+        updateHealthPlayerB(h2 - dmg_done);
     })
 
     // let h = getHealthPlayerB();
@@ -162,14 +162,14 @@ function dmg_to_B(dmg_done) {
 }
 
 function healA(amount) {
-    getHealthPlayer("A").then(h => {
-        updateHealthPlayerA(h + amount);
+    getHealthPlayer("A").then(h3 => {
+        updateHealthPlayerA(h3 + amount);
     })
 }
 
 function healB(amount) {
-    getHealthPlayer("B").then(h => {
-        updateHealthPlayerB(h + amount);
+    getHealthPlayer("B").then(h4 => {
+        updateHealthPlayerB(h4 + amount);
     })
 }
 
