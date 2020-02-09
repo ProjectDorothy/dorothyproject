@@ -1,22 +1,43 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <script src="p5.js"></script>
     <script src="p5.sound.min.js"></script>
     <script src="ml5.min.js"></script>
-    <script src="scripts/firebase_functions.js"></script>
+    <!-- update the version number as needed -->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
 
-  </head>
-  <body>
-<!--    <script src="sketch.js"></script>-->
+</head>
+
+<body>
+    <!--    <script src="sketch.js"></script>-->
 
     <!-- create buttons to simulate the outputs from the posenet -->
     <div>
-      <button onclick="updateHealthPlayerA(15)">Updata Health of Player 1 </button> <!-- add onclick -->
-      <button onclick="reset_game()">Reset </button> <!-- add onclick -->
-      <button>Move 3 </button> <!-- add onclick -->
+        <button onclick="updateHealthPlayerA(15)">Updata Health of Player 1 </button> <!-- add onclick -->
+        <button onclick="reset_game()">Reset </button> <!-- add onclick -->
+        <button>Move 3 </button> <!-- add onclick -->
     </div>
 
 
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+
+
+    <script src="scripts/firebase_functions.js"></script>
 </body>
+
 </html>
