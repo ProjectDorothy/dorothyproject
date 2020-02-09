@@ -29,26 +29,26 @@
 </head>
 
 <body>
-        <script src="sketch.js"></script>
+    <script src="sketch.js"></script>
 
     <!-- create buttons to simulate the outputs from the posenet -->
     <div>
 
         <script>
-            function test(){
+            function test() {
                 var health = getHealthPlayerA();
                 console.log("HEALTH: " + health);
             }
         </script>
 
-<!--        <button onclick="updateHealthPlayerA(15); update_turn(); whos_turn(); updt()">Update Health of Player A </button>-->
-<!--        <button onclick="reset_game(); whos_turn();updt()">Reset </button>-->
-<!--        <button onclick="test()">Show health of player A </button>-->
-<!--        <button onclick="turn_number(); update_turn(); whos_turn();updt()">Print turn number</button>-->
+        <!--        <button onclick="updateHealthPlayerA(15); update_turn(); whos_turn(); updt()">Update Health of Player A </button>-->
+        <!--        <button onclick="reset_game(); whos_turn();updt()">Reset </button>-->
+        <!--        <button onclick="test()">Show health of player A </button>-->
+        <!--        <button onclick="turn_number(); update_turn(); whos_turn();updt()">Print turn number</button>-->
 
 
-<!--        the moves that B does on A-->
-<!--        figure out a way to incorporate the updt and whos_turn -->
+        <!--        the moves that B does on A-->
+        <!--        figure out a way to incorporate the updt and whos_turn -->
         <button onclick="dmg_to_A(30); update_turn();">Player B uses Power on Player A</button>
         <button onclick="dmg_to_A(10); update_turn();">Player B uses Normal on Player A</button>
         <button onclick="dmg_to_B(-15); update_turn();">Player B uses Potion on Himself</button>

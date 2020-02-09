@@ -119,7 +119,7 @@ playerB.on("value", function (data) {
 */
 
 function updateHealthPlayerA(healthValue) {
-    console.log("Updating value");
+    console.log("Updating value A");
 
     playerA.update(
         {
@@ -129,7 +129,7 @@ function updateHealthPlayerA(healthValue) {
 }
 
 function updateHealthPlayerB(healthValue) {
-    console.log("Updating value");
+    console.log("Updating value B");
 
     playerB.update(
         {
@@ -139,13 +139,13 @@ function updateHealthPlayerB(healthValue) {
 }
 
 function dmg_to_A(dmg_done) {
-    let h = getHealthPlayerA()
-    updateHealthPlayerA(h - dmg_done)
+    let h = getHealthPlayerA();
+    updateHealthPlayerA(h - dmg_done);
 }
 
 function dmg_to_B(dmg_done) {
-    let h = getHealthPlayerB()
-    updateHealthPlayerB(h - dmg_done)
+    let h = getHealthPlayerB();
+    updateHealthPlayerB(h - dmg_done);
 }
 
 function update_turn() {
